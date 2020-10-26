@@ -3,6 +3,12 @@ Orleans POC simulating attendance distribution of a real scenario, used on a TDC
 
 # Getting Started
 
+Create a database named Orleans and run all scripts located on DatabaseSetup folder on the following order:
+1 - Main
+2 - Clustering
+3 - Persistence
+4 - Reminders
+
 ## Monitoring
 
 Use http://localhost:8080 to access Microsoft Orleans Monitoring Dashboard, where you can see all the requests done, time spent on them and other informations.

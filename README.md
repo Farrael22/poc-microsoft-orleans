@@ -4,10 +4,10 @@ Orleans POC simulating attendance distribution of a real scenario, used on a TDC
 # Getting Started
 
 Create a database named Orleans and run all scripts located on DatabaseSetup folder on the following order:
-1 - Main
-2 - Clustering
-3 - Persistence
-4 - Reminders
+1. Main
+2. Clustering
+3. Persistence
+4. Reminders
 
 ## Monitoring
 

@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 namespace OrleansClient
 {
     /// <summary>
-    /// Orleans test silo client
+    /// Orleans test client
     /// </summary>
     public class Program
     {
@@ -153,16 +153,13 @@ namespace OrleansClient
             Console.WriteLine("What is attendant`s name?");
             var attendantName = Console.ReadLine();
 
-            Console.WriteLine("What is bot`s name?");
-            var botName = Console.ReadLine();
-
             Console.WriteLine("What is ticket`s id?");
             var ticketId = int.Parse(Console.ReadLine());
 
-            await CloseTicketAsync(client, attendantName, botName, ticketId);
+            await CloseTicketAsync(client, attendantName, ticketId);
         }
 
-        private static async Task CloseTicketAsync(IClusterClient client, string attendantName, string botName, int ticketId)
+        private static async Task CloseTicketAsync(IClusterClient client, string attendantName, int ticketId)
         {
             var attendantGrain = client.GetGrain<IAttendantGrain>($"{attendantName}");
             await attendantGrain.FinishTicketAsync(ticketId);

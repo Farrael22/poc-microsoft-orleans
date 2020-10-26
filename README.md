@@ -1,5 +1,5 @@
 # Introduction
-Orleans POC simulating attendance distribution of a real scenario.
+Orleans POC simulating attendance distribution of a real scenario, used on a TDC Recife .Net presentation.
 
 # Getting Started
 

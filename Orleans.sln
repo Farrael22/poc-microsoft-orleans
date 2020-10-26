@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29926.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Orleans.Client", "Orleans.Client\Orleans.Client.csproj", "{CF9713D3-1E95-4872-93BC-9B9CB3240408}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Orleans.Grains", "Orleans.Grains\Orleans.Grains.csproj", "{CD845635-3DD9-498D-B6A0-5064EC1E8B5B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Orleans.Interfaces", "Orleans.Interfaces\Orleans.Interfaces.csproj", "{CEE059A5-AEE7-4385-9496-601ED870B861}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Orleans.SiloHost", "Orleans.SiloHost\Orleans.SiloHost.csproj", "{22E55C47-7510-4842-9216-6E0DFFBBDB91}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CF9713D3-1E95-4872-93BC-9B9CB3240408}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF9713D3-1E95-4872-93BC-9B9CB3240408}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF9713D3-1E95-4872-93BC-9B9CB3240408}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF9713D3-1E95-4872-93BC-9B9CB3240408}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD845635-3DD9-498D-B6A0-5064EC1E8B5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD845635-3DD9-498D-B6A0-5064EC1E8B5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD845635-3DD9-498D-B6A0-5064EC1E8B5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD845635-3DD9-498D-B6A0-5064EC1E8B5B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEE059A5-AEE7-4385-9496-601ED870B861}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEE059A5-AEE7-4385-9496-601ED870B861}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEE059A5-AEE7-4385-9496-601ED870B861}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEE059A5-AEE7-4385-9496-601ED870B861}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22E55C47-7510-4842-9216-6E0DFFBBDB91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22E55C47-7510-4842-9216-6E0DFFBBDB91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22E55C47-7510-4842-9216-6E0DFFBBDB91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22E55C47-7510-4842-9216-6E0DFFBBDB91}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CCEE21EE-14D3-48AA-962B-B02943E73BAA}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Orleans.SiloHost": {
+      "commandName": "Project",
+      "commandLineArgs": "2"
+    }
+  }
+}

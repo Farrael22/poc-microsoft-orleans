@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Orleans.Client": {
+      "commandName": "Project",
+      "commandLineArgs": "pinga"
+    }
+  }
+}

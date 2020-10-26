@@ -21,8 +21,6 @@ namespace Orleans.Grains
 
         public async Task AddToQueueAsync(Ticket ticket)
         {
-            Console.WriteLine($"#AddToQueue: set {ticket.Id} - {ticket.BotIdentity} - {ticket.QueueName}");
-
             await this.EnqueueTicketAsync(ticket);
         }
 

@@ -34,7 +34,7 @@ namespace OrleansClient
                     do
                     {
                         Console.WriteLine("Choose your option number:");
-                        Console.WriteLine("1 - Set attendant online");
+                        Console.WriteLine("1 - Set attendants online");
                         Console.WriteLine("2 - Create Ticket");
                         Console.WriteLine("3 - Close Ticket");
 
@@ -43,7 +43,7 @@ namespace OrleansClient
                         switch (option)
                         {
                             case 1:
-                                await SetAttendantOnlineOptionChoosenAsync(client);
+                                await SetAttendantsOnlineOptionChoosenAsync(client);
                                 break;
                             case 2:
                                 await CreateTicketOptionChoosenAsync(client);
@@ -127,25 +127,31 @@ namespace OrleansClient
             await CreateTicketsAsync(client, botName, queueName, ticketId);
         }
 
-        private static async Task SetAttendantOnlineOptionChoosenAsync(IClusterClient client)
+        private static async Task SetAttendantsOnlineOptionChoosenAsync(IClusterClient client)
         {
-            var attendant = new Attendant
+            Console.WriteLine("How many attendants do you want?");
+            var attendantsCount = int.Parse(Console.ReadLine());
+
+            for (int i = 1; i <= attendantsCount; i++)
             {
-                AttendantName = "attendant",
-                BotsInformation = new Dictionary<string, IList<string>>
+                var attendant = new Attendant
                 {
-                    { 
-                        "test", 
-                        new List<string>{ "queue1", "queue2" } 
+                    AttendantName = $"attendant{i}",
+                    BotsInformation = new Dictionary<string, IList<string>>
+                {
+                    {
+                        "bot",
+                        new List<string>{ "q1", "q2" }
                     }
                 },
-                CurrentTickets = new List<Ticket>(),
-                LastTicketReceivedDate = default,
-                MaxSlots = 3
-            };
+                    CurrentTickets = new List<Ticket>(),
+                    LastTicketReceivedDate = default,
+                    MaxSlots = 3
+                };
 
-            var attendantGrain = client.GetGrain<IAttendantGrain>($"{attendant.AttendantName}");
-            await attendantGrain.GoOnlineAsync(attendant);
+                var attendantGrain = client.GetGrain<IAttendantGrain>($"{attendant.AttendantName}");
+                await attendantGrain.GoOnlineAsync(attendant);
+            }
         }
 
         private static async Task CloseTicketOptionChosenAsync(IClusterClient client)
@@ -167,18 +173,10 @@ namespace OrleansClient
 
         private async static Task CreateTicketsAsync(IClusterClient client, string botName, string queueName, int ticketId)
         {
-            var ticket = new Ticket(ticketId, queueName, null, botName);
+            var ticket = new Ticket(ticketId, queueName, botName);
 
             var owner = client.GetGrain<IBotGrain>("botname");
-
-            try
-            {
-                await owner.FowardTicketAsync(ticket);
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("#CreateTicketsAsync - failed", e);
-            }
+            await owner.FowardTicketAsync(ticket);
         }
     }
 }

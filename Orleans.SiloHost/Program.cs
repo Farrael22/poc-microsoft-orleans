@@ -59,11 +59,6 @@ namespace OrleansSiloHost
                     options.ClusterId = "poc";
                     options.ServiceId = "Orleans";
                 })
-                .Configure<GrainCollectionOptions>(options =>
-                {
-                    options.CollectionAge = new TimeSpan(00, 00, 40);
-                    options.CollectionQuantum = new TimeSpan(00, 00, 30);
-                })
                 .ConfigureEndpoints(siloPort: 11111 + id, gatewayPort: 30000 + id)
                 .ConfigureApplicationParts(parts => parts.AddApplicationPart(typeof(BotGrain).Assembly).WithReferences())
                 .UseDashboard(options => { options.Port = 8080 + id; })

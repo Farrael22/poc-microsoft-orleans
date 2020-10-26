@@ -17,7 +17,7 @@ namespace Orleans.Grains
                 bot =>
                 bot.Value.Select(async queue =>
                 {
-                    var queueGrain = GrainFactory.GetGrain<IQueueGrain>($"{bot}-{queue}");
+                    var queueGrain = GrainFactory.GetGrain<IQueueGrain>($"{bot.Key}-{queue}");
                     await queueGrain.RegisterAttendantAsync(attendant.AttendantName, attendant.MaxSlots, attendant.CurrentTickets.Count());
                 }));
 

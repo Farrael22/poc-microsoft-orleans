@@ -1,5 +1,5 @@
 # Introduction
-Actor model POC simulating desk ticket distribution
+Orleans POC simulating attendance distribution of a real scenario.
 
 # Getting Started
 

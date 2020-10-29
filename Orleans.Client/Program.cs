@@ -115,13 +115,13 @@ namespace OrleansClient
 
         private static async Task CreateTicketOptionChoosenAsync(IClusterClient client)
         {
-            Console.WriteLine("What is bot`s name?");
+            Console.WriteLine("What is the bot name?");
             var botName = Console.ReadLine();
 
-            Console.WriteLine("What is queue`s name?");
+            Console.WriteLine("What is the queue name?");
             var queueName = Console.ReadLine();
 
-            Console.WriteLine("What is ticket`s id?");
+            Console.WriteLine("What is the ticket id?");
             var ticketId = int.Parse(Console.ReadLine());
 
             await CreateTicketsAsync(client, botName, queueName, ticketId);
@@ -156,10 +156,10 @@ namespace OrleansClient
 
         private static async Task CloseTicketOptionChosenAsync(IClusterClient client)
         {
-            Console.WriteLine("What is attendant`s name?");
+            Console.WriteLine("What is the attendant name?");
             var attendantName = Console.ReadLine();
 
-            Console.WriteLine("What is ticket`s id?");
+            Console.WriteLine("What is the ticket id?");
             var ticketId = int.Parse(Console.ReadLine());
 
             await CloseTicketAsync(client, attendantName, ticketId);

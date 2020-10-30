@@ -175,7 +175,7 @@ namespace OrleansClient
         {
             var ticket = new Ticket(ticketId, queueName, botName);
 
-            var owner = client.GetGrain<IBotGrain>("botname");
+            var owner = client.GetGrain<IBotGrain>(botName);
             await owner.FowardTicketAsync(ticket);
         }
     }
